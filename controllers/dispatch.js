@@ -1,4 +1,5 @@
 const {insertOne, findAllDispatches, findDispatchById} = require("../util/db");
+const path = require('path');
 
 exports.postProducts = (req, res, next) => {
     insertOne(req.body)
@@ -20,4 +21,8 @@ exports.getDispatchById = (req, res, next) => {
         res.json(result)
     })
         .catch(err => console.log(err))
+}
+exports.getHTML = (req, res,next) => {
+    console.log('connect...');
+    res.sendFile(path.join(process.cwd(),'dist', 'index.html'))
 }

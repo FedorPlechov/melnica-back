@@ -4,6 +4,7 @@ const dispatchController = require("../controllers/dispatch");
 
 const router = express.Router();
 
+router.get('/', dispatchController.getHTML);
 router.post('/saveProducts', dispatchController.postProducts);
 router.get('/allDispatches', dispatchController.getDispatches);
 router.post('/getDispatchById', dispatchController.getDispatchById);
